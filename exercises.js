@@ -1,3 +1,4 @@
+console.log($);
 // Hey Iron Yard Hackers! Enjoy!
 // Make sure to open your js consoles!
 
@@ -47,13 +48,44 @@ function expect(target) {
 //Make the test code above work correctly by making a constuctor
 
 // function declaration (shorter way to express function definition)
-function Dog(){
+// var $ = require('jquery');
 
+function Dog(dog){
+  if(!dog){
+    dog = {};
+  }
+  var defaults = {hungry: true, status: 'normal'};
+  var dogConfig = $.extend({}, defaults, dog);
+  console.log(dogConfig);
+
+  this.status = dogConfig.status;
+  this.color = dogConfig.color;
+  this.hungry = dogConfig.hungry
+  // if(dog.hungry === false){
+  //   this.hungry = false; //construtor defaults. look in notes.
+  // }else{
+  //   this.hungry = true; //construtor defaults. look in notes.
+  // };
+
+  console.log(dog);
 }
 
-function Human(){
-  
+function Human(config){
+  var defaults = {cool: false};
+  var humanConfig = $.extend({}, defaults, config);
+
+  this.pet = function(dog){
+    dog.status = 'happy';
+    console.log("pet was run");
+  }
+  this.feed = function(dog){
+    dog.hungry = false;
+    console.log('pet was fed');
+  }
+
+  this.cool = humanConfig.cool;
 }
+
 
 // function definition
 // var Dog = function(){
@@ -118,7 +150,7 @@ it("should make Kepler red", function(){
   expect(kepler.color).toBe('red');
 });
 
-it("should be make Moonshine hungry and Kepler not hungry", function(){
+it("should make Moonshine hungry and Kepler not hungry", function(){
   expect(moonshine.hungry).toBe(true);
   expect(kepler.hungry).toBe(false);
 });
