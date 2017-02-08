@@ -51,6 +51,10 @@ function Dog(){
 
 }
 
+function Human(){
+  
+}
+
 // function definition
 // var Dog = function(){
 //
