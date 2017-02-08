@@ -37,6 +37,27 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
+
+// it("should make Kepler happy when Dan pets him", function(){
+//   expect(kepler.status).toBe('normal');
+//   dan.pet(kepler);
+//   expect(kepler.status).toBe('happy');
+// });
+
+//Make the test code above work correctly by making a constuctor
+
+// function declaration (shorter way to express function definition)
+function Dog(){
+
+}
+
+// function definition
+// var Dog = function(){
+//
+// };
+
+
+
 // ????????
 // ????????
 // ????????
